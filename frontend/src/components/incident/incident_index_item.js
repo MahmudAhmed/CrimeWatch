@@ -8,8 +8,9 @@ class IndexItem extends React.Component {
 
 
     render() {
+        // const { category, time, description } = this.props.incident;
         return(
-            <div>
+            <div className="incident-index-item" >
 
             </div>
         );
