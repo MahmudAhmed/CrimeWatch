@@ -5,7 +5,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="all-main">
-                { NavBar }
+                {/* { NavBar } */}
                 <div className="report-map">
 
                 </div>
