@@ -9,12 +9,12 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-    this.toggleForm1 = this.toggleForm1.bind(this);
-    this.toggleForm2 = this.toggleForm2.bind(this);
+    this.toggleLogin = this.toggleLogin.bind(this);
+    this.toggleSignup = this.toggleSignup.bind(this);
 
     this.state = {
-      showForm1: false,
-      showForm2: false
+      showLogin: false,
+      showSignup: false
     };
   }
 
@@ -23,15 +23,15 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  toggleForm1() {
+  toggleLogin() {
     this.setState({
-      showForm1: !this.state.showForm1
+      showLogin: !this.state.showLogin
     });
   }
 
-  toggleForm2() {
+  toggleSignup() {
     this.setState({
-      showForm2: !this.state.showForm2
+      showSignup: !this.state.showSignup
     })
   }
 
@@ -47,15 +47,15 @@ class NavBar extends React.Component {
         </div>
       );
     } else {
-      const loginForm = (this.state.showForm1 ?
-        <LoginFormContainer showModal={this.state.showForm1}
-          closeFormModal={() => this.setState({ showForm1: false })} />
+      const loginForm = (this.state.showLogin ?
+        <LoginFormContainer showModal={this.state.showLogin}
+          closeFormModal={() => this.setState({ showLogin: false })} />
         : null
       );
 
-      const signupForm = (this.state.showForm2 ?
-        <SignupFormContainer showModal={this.state.showForm2}
-          closeFormModal={() => this.setState({ showForm2: false })} />
+      const signupForm = (this.state.showSignup ?
+        <SignupFormContainer showModal={this.state.showSignup}
+          closeFormModal={() => this.setState({ showSignup: false })} />
         : null
       );
 
@@ -64,9 +64,9 @@ class NavBar extends React.Component {
           {/* <Link to={"/signup"}>Signup</Link>
           <Link to={"/login"}>Login</Link> */}
           {loginForm}
-          <button onClick={this.toggleForm1} >Login</button>
+          <button onClick={this.toggleLogin} >Login</button>
           {signupForm}
-          <button onClick={this.toggleForm2} >Signup</button>
+          <button onClick={this.toggleSignup} >Signup</button>
         </div>
       );
     }
