@@ -1,6 +1,7 @@
 import React from "react";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
+import ReportForm from "../report/report_form";
 import "../modal/modal.css";
 // import { Link } from "react-router-dom";
 
@@ -11,10 +12,12 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
     this.toggleLogin = this.toggleLogin.bind(this);
     this.toggleSignup = this.toggleSignup.bind(this);
+    this.toggleReport = this.toggleReport.bind(this);
 
     this.state = {
       showLogin: false,
-      showSignup: false
+      showSignup: false,
+      showReport: false
     };
   }
 
@@ -32,6 +35,12 @@ class NavBar extends React.Component {
   toggleSignup() {
     this.setState({
       showSignup: !this.state.showSignup
+    })
+  }
+
+  toggleReport() {
+    this.setState({
+      showReport: !this.state.showReport
     })
   }
 
