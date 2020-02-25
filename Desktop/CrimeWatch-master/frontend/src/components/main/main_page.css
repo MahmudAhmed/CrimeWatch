@@ -1,0 +1,27 @@
+.main-div-2 {
+    display: flex;
+    border-bottom: 3px solid black;
+}
+
+.main-map {
+    display: flex;
+    width: 55%;
+    height: 55vw;
+    position: relative;
+    overflow: hidden;
+    background-color: yellow;
+    flex-direction: column;
+    border-right: 3px solid black;
+}
+
+.main-report-list { 
+    flex-direction: column;
+    display: flex;
+    width: 45%;
+    background-color: deepskyblue;
+}
+
+
+footer {
+    color: #666666;
+}
