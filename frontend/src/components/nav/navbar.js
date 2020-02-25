@@ -1,7 +1,7 @@
 import React from "react";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
-import ReportForm from "../report/report_form";
+import ReportFormContainer from "../report/report_form_container";
 import "../modal/modal.css";
 // import { Link } from "react-router-dom";
 
@@ -68,6 +68,12 @@ class NavBar extends React.Component {
         : null
       );
 
+      const reportForm = (this.state.showReport ?
+        <ReportFormContainer showModal={this.state.showReport}
+         closeFormModal={() => this.setState({ showReport: false })} />
+        : null
+      );
+
       return (
         <div>
           {/* <Link to={"/signup"}>Signup</Link>
@@ -76,6 +82,8 @@ class NavBar extends React.Component {
           <button onClick={this.toggleLogin} >Login</button>
           {signupForm}
           <button onClick={this.toggleSignup} >Signup</button>
+          {reportForm}
+          <button onClick={this.toggleReport} >Report A Crime </button>
         </div>
       );
     }
