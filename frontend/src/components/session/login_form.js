@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import "../modal/modal.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user);
+    this.props.closeFormModal();
   }
 
   // Render the session errors if there are any
@@ -57,7 +59,8 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="login-form-container">
+        <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
         <form onSubmit={this.handleSubmit}>
           <div>
             <input

@@ -39,8 +39,9 @@ class SignupForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
-    debugger
+    // debugger
     this.props.signup(user);
+    this.props.closeFormModal();
   }
 
   renderErrors() {
@@ -56,6 +57,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
+        <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
             <br />
