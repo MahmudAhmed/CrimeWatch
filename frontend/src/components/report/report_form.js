@@ -30,7 +30,7 @@ class ReportForm extends React.Component {
                         />
 
                         <br />
-                        <input
+                        <textarea rows="4" cols="50"
                             type="textarea"
                             placeholder="Description"
                         />
