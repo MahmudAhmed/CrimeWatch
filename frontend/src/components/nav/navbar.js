@@ -47,12 +47,19 @@ class NavBar extends React.Component {
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
-      return (
-        <div>
+      const reportForm = (this.state.showReport ?
+        <ReportFormContainer showModal={this.state.showReport}
+         closeFormModal={() => this.setState({ showReport: false })} />
+         : null
+         );
+         return (
+           <div>
           {/* <Link to={"/tweets"}>All Tweets</Link> */}
           <Link to={"/profile"}>Profile</Link>
           {/* <Link to={"/new_tweet"}>Write a Tweet</Link> */}
           <button onClick={this.logoutUser}>Logout</button>
+          {reportForm}
+          <button onClick={this.toggleReport} >Report A Crime </button>
         </div>
       );
     } else {
@@ -68,11 +75,6 @@ class NavBar extends React.Component {
         : null
       );
 
-      const reportForm = (this.state.showReport ?
-        <ReportFormContainer showModal={this.state.showReport}
-         closeFormModal={() => this.setState({ showReport: false })} />
-        : null
-      );
 
       return (
         <div>
@@ -82,8 +84,6 @@ class NavBar extends React.Component {
           <button onClick={this.toggleLogin} >Login</button>
           {signupForm}
           <button onClick={this.toggleSignup} >Signup</button>
-          {reportForm}
-          <button onClick={this.toggleReport} >Report A Crime </button>
         </div>
       );
     }
