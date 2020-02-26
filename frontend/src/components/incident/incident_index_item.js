@@ -2,16 +2,14 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 class IndexItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-
     render() {
-        // const { category, time, description } = this.props.incident;
         return(
-            <div className="incident-index-item" >
-                
+            <div className="incident-container" >
+                <p className="latitude">Lat: {this.props.incident.lat}</p>
+                <p className="longitude">Lng: {this.props.incident.lng}</p>
+                <p className="category">Category: {this.props.incident.category}</p>
+                <p className="time">Time: {this.props.incident.time}</p>
+                <p className="description">Description: {this.props.incident.description}</p>
             </div>
         );
     }
