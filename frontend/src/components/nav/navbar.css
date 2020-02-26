@@ -1,0 +1,141 @@
+html {
+    font-family: synthese, sans-serif;
+}
+.nav-header {
+    /* padding: 1rem 0; */
+    width: 100%;
+    z-index: 5;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 3px solid black;
+    background-color: pink;
+}
+
+.top-nav-div {
+    -webkit-box-pack: justify;
+    justify-content: space-around;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    /* background-color: pink; */
+}
+
+.nav-h1 {
+    font-size: 35px;
+    /* color: blue;  */
+}
+
+.top-nav-div > a {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+
+
+.nav-loggedin-links {
+    display: flex;
+    background-color: transparent;
+}
+
+.nav-loggedin-links2 {
+    display: flex;
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    padding: 7px 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background: transparent;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.nav-signup-login {
+    display: block;
+    /* background-color: teal; */
+}
+
+
+
+.nav-links {
+    padding: 7px 20px;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid black;
+    font-size: 16px;
+}
+
+.nav-links-rl {
+    padding: 7px 20px;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links-rl > a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.nav-links-rl:hover {
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+    /* text-decoration: underline; */
+
+}
+
+.nav-links:hover {
+    /* text-decoration: underline; */
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+}
+
+.nav-links-su {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    padding: 7px 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background: transparent;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.nav-links-su:hover {
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+}
+
+/* .splash-signup {
+    text-decoration: none;
+    padding: 20px;
+    padding: 7px 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background: transparent;
+}
+
+.splash-signup:hover {
+    transition: 0.5s;
+    background-color: white;
+    color: grey;
+} */
