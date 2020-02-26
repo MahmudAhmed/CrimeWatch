@@ -23,6 +23,7 @@ class ReportForm extends React.Component {
                             type="text"
                             placeholder="Lat"
                         />
+
                         <br />
                         <input
                             type="text"
@@ -30,10 +31,20 @@ class ReportForm extends React.Component {
                         />
 
                         <br />
+                        <select id="category">
+                            <option value="theft">Theft</option>
+                            <option value="homicide">Homicide</option>
+                            <option value="streetfight">Street-Fight</option>
+                            <option value="robbery">Robbery</option>
+                            <option value="assault">Assault</option>
+                        </select>
+
+                        <br />
                         <textarea rows="4" cols="50"
                             type="textarea"
                             placeholder="Description"
                         />
+
                         <br />
                         <input type="submit" value="Submit" />
                     </div>
