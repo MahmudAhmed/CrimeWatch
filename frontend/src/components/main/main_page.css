@@ -6,10 +6,10 @@
 .main-map {
     display: flex;
     width: 55%;
-    height: 55vw;
+    height: 46vw;
     position: relative;
     overflow: hidden;
-    background-color: yellow;
+    background-color: rgb(97, 97, 97);
     flex-direction: column;
     border-right: 3px solid black;
     align-items: center;

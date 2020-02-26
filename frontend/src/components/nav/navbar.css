@@ -2,7 +2,7 @@ html {
     font-family: synthese, sans-serif;
 }
 .nav-header {
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     width: 100%;
     z-index: 5;
     background-color: #fff;

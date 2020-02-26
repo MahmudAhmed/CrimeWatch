@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css"
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -17,18 +18,18 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          {/* <Link to={"/tweets"}>All Tweets</Link> */}
-          {/* <Link to={"/profile"}>Profile</Link> */}
-          {/* <Link to={"/new_tweet"}>Write a Tweet</Link> */}
-          <button onClick={this.logoutUser}>Logout</button>
+        <div className='nav-loggedin-links'>
+          <Link to={"/reports"} className="nav-links">All Reports</Link>
+          <Link to={"/profile"} className="nav-links">Profile</Link>
+          <Link to={"/new_report"} className="nav-links">Write a Report</Link>
+          <button onClick={this.logoutUser} className='nav-logout-but'>Logout</button>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+        <div className='nav-signup-login'>
+          <Link to={"/login"} className="nav-links">Log In</Link>
+          <Link to={"/signup"} className="nav-links-su">Sign Up</Link>
         </div>
       );
     }
@@ -36,10 +37,12 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>CrimeWatch</h1>
-        {this.getLinks()}
-      </div>
+      <header className='nav-header'>
+        <div className='top-nav-div'>
+          <a href="/"><h1 className='nav-h1'>CrimeWatch</h1></a>
+          {this.getLinks()}
+        </div>
+      </header>
     );
   }
 }
