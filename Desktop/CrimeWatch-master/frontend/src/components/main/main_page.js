@@ -9,8 +9,9 @@ class MainPage extends React.Component {
         <div className="main-div-2">
           {/* <h1 className="main-h1">Welcome To CrimeWatch</h1> */}
           <div className='main-map'> 
-            Maps will go here! 
-            <div className='main-report-list'></div>
+            Map will go here! 
+          <button className='main-button'>Make a New Report will go here!</button>
+        
           </div>
           <div className='main-report-list'>
             <ul>
@@ -19,9 +20,8 @@ class MainPage extends React.Component {
           </div>
         </div>
         <div>
-          <button className='main-buton'>Make a New Report will go here!</button>
         </div>
-          <small><footer>CrimeWatch &copy; 2020</footer></small>
+          <footer className='main-footer'>CrimeWatch &copy; 2020</footer>
       </div>
     );
   }
