@@ -17,6 +17,7 @@ class IndexItem extends React.Component {
     }
 }
 
+///dropdown for category//
 {/* <select id="category">
     <option value="theft">Theft</option>
     <option value="homicide">Homicide</option>
