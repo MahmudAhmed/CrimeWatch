@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/MahmudAhmed/ChuckFacts#readme",
   "dependencies": {
+    "@mongoosejs/double": "^0.2.0",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -31,6 +32,7 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.9.2",
+    "mongoose-double": "0.0.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-redux": "^7.2.0",
