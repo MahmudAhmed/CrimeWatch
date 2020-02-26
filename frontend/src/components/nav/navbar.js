@@ -4,6 +4,7 @@ import SignupFormContainer from "../session/signup_form_container";
 import ReportFormContainer from "../report/report_form_container";
 import "../modal/modal.css";
 import { Link } from "react-router-dom";
+import "./navbar.css"
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -49,17 +50,18 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       const reportForm = (this.state.showReport ?
         <ReportFormContainer showModal={this.state.showReport}
-         closeFormModal={() => this.setState({ showReport: false })} />
-         : null
-         );
-         return (
-           <div>
-          {/* <Link to={"/tweets"}>All Tweets</Link> */}
-          <Link to={"/profile"}>Profile</Link>
-          {/* <Link to={"/new_tweet"}>Write a Tweet</Link> */}
-          <button onClick={this.logoutUser}>Logout</button>
-          {reportForm}
-          <button onClick={this.toggleReport} >Report A Crime </button>
+        closeFormModal={() => this.setState({ showReport: false })} />
+        : null
+      );
+
+      return (
+        <div className='nav-signup-login'>
+            <Link to={"/profile"} className="nav-links">Profile</Link>
+            <Link to={"/reports"} className="nav-links">All Reports</Link>
+            {/* <Link to={"/new_report"} className="nav-links">Write a Report</Link> */}
+            {reportForm}
+            <button onClick={this.toggleReport} className="nav-links-rl"><Link to={"/new_report"}>Write a Report</Link> </button>
+            <button onClick={this.logoutUser} className='nav-links-rl'>Logout</button>
         </div>
       );
     } else {
@@ -77,13 +79,13 @@ class NavBar extends React.Component {
 
 
       return (
-        <div>
-          {/* <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link> */}
+        <div className='nav-signup-login'>
+          {/* <Link to={"/login"} className="nav-links">Log In</Link>
+          <Link to={"/signup"} className="nav-links-su">Sign Up</Link> */}
           {loginForm}
-          <button onClick={this.toggleLogin} >Login</button>
+          <button onClick={this.toggleLogin} className="nav-links">Log In</button>
           {signupForm}
-          <button onClick={this.toggleSignup} >Signup</button>
+          <button onClick={this.toggleSignup} className="nav-links-su">Sign Up</button>
         </div>
       );
     }
@@ -91,10 +93,12 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>CrimeWatch</h1>
-        {this.getLinks()}
-      </div>
+      <header className='nav-header'>
+        <div className='top-nav-div'>
+          <a href="/"><h1 className='nav-h1'>CrimeWatch</h1></a>
+          {this.getLinks()}
+        </div>
+      </header>
     );
   }
 }
