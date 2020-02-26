@@ -11,7 +11,7 @@ class IndexItem extends React.Component {
         // const { category, time, description } = this.props.incident;
         return(
             <div className="incident-index-item" >
-
+                
             </div>
         );
     }
