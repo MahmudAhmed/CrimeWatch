@@ -1,3 +1,85 @@
-.test{
-  background-color: red;
+html {
+    font-family: synthese, sans-serif;
 }
+.nav-header {
+    padding: 1rem 0;
+    width: 100%;
+    z-index: 5;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 3px solid black;
+    background-color: pink;
+}
+
+.top-nav-div {
+    -webkit-box-pack: justify;
+    justify-content: space-around;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    /* background-color: pink; */
+}
+
+.nav-h1 {
+    font-size: 35px;
+    /* color: blue;  */
+}
+
+.top-nav-div > a {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+
+
+.nav-loggedin-links {
+    display: flex;
+    background-color: red;
+}
+
+.nav-signup-login {
+    display: block;
+    /* background-color: teal; */
+}
+
+.nav-links {
+    padding: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links:hover {
+    text-decoration: underline;
+}
+
+.nav-links-su {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    padding: 7px 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background: transparent;
+}
+
+.nav-links-su:hover {
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+}
+
+/* .splash-signup {
+    text-decoration: none;
+    padding: 20px;
+    padding: 7px 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background: transparent;
+}
+
+.splash-signup:hover {
+    transition: 0.5s;
+    background-color: white;
+    color: grey;
+} */
