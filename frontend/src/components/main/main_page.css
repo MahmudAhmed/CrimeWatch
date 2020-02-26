@@ -1,0 +1,52 @@
+.main-div-2 {
+    display: flex;
+    border-bottom: 3px solid black;
+}
+
+.main-map {
+    display: flex;
+    width: 55%;
+    height: 55vw;
+    position: relative;
+    overflow: hidden;
+    background-color: yellow;
+    flex-direction: column;
+    border-right: 3px solid black;
+    align-items: center;
+}
+
+.main-report-list { 
+    flex-direction: column;
+    display: flex;
+    width: 45%;
+    background-color: deepskyblue;
+    align-items: center;
+}
+
+.main-button {
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.main-button:hover {
+    cursor: pointer;
+    transition: 1.0s;
+    background-color: white;
+    text-decoration: underline;
+}
+
+.main-footer {
+    color: #666666;
+    display: flex;
+    justify-content: center;
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    font-size: small;
+    padding-top: 10px;
+}
