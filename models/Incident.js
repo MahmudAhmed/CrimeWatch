@@ -5,8 +5,8 @@ const Double = require("@mongoosejs/double");
 const IncidentSchema = new Schema({
   witness: {
     type: Schema.Types.ObjectId,
-    ref: "users"
-    // required: true
+    ref: "users",
+    required: true
   },
   category: {
     type: String,

@@ -7,7 +7,23 @@ router.get("/test", (req, res) => {
   res.json({ msg: "this is incidents route" });
 });
 
-router.post("/index", (req, res) => {
+router.get("/all", (req, res) => {
+  Incident.find({}).then ( (incidents) => {
+    res.json({
+      incidents
+    })
+  })
+});
+
+router.get("/:incident_id", (req, res) => {
+  Incident.find({_id: req.params.incident_id}).then(incident => {
+    res.json({
+      incident
+    });
+  });
+});
+
+router.post("/create", (req, res) => {
   debugger;
   const { errors, isValid } = validateIncidentForm(req.body);
   if (!isValid) {
@@ -15,6 +31,7 @@ router.post("/index", (req, res) => {
   }
 
    const newIncident = new Incident({
+     witness: req.body.witness,
      lat: req.body.lat,
      lng: req.body.lng,
      description: req.body.description,
@@ -25,6 +42,22 @@ router.post("/index", (req, res) => {
     .then(incident => res.json(incident))
     .catch(err => console.log(err));
    
+});
+
+router.patch("/update/:incident_id", (req, res) => {
+
+  // const { errors, isValid } = validateIncidentForm(req.body);
+  // if (!isValid) {
+  //   return res.status(400).json(errors);
+  // }
+  
+  debugger;
+  Incident.updateOne({ _id: req.params.incident_id}, req.body )
+    .then(incident => {
+      debugger
+      res.json(incident)
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

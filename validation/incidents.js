@@ -3,19 +3,18 @@ const validText = require("./valid-text");
 
 module.exports = function validateIncidentForm(data) {
   let errors = {};
-  debugger
   let categories = ["Theft", "Homicide", "Street-Fight", "Robbery", "Assault" ];
   data.description = validText(data.description) ? data.description : "";
 
-  // if (Validator.isFloat(data.lat)) {
-  //   errors.lat = "Latitude is invalid";
-  // }
+  if (!Validator.isFloat(data.lat)) {
+    errors.lat = "Latitude is invalid";
+  }
   
   if (Validator.isEmpty(data.lat)) {
     errors.lat = "Latitude field is required";
   }
 
-  if (Validator.isDecimal(data.lng.toString())) {
+  if (!Validator.isFloat(data.lng)) {
     errors.lng = "Longitude is invalid";
   }
 
@@ -31,7 +30,7 @@ module.exports = function validateIncidentForm(data) {
     errors.description = "Description field is required";
   }
 
-  if (Validator.isIn(data.category, categories)) {
+  if (!Validator.isIn(data.category, categories)) {
     errors.category = "Category field is invalid";
   }
 
