@@ -1,0 +1,36 @@
+.incident-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.direction {
+    display: flex;
+    flex-direction: row;
+}
+
+.latitude {
+    margin-left: 20px;
+}
+
+.longitude {
+    margin-left: 20px;
+}
+
+.cat-time {
+    display: flex;
+    flex-direction: row;
+}
+
+.category {
+    margin-left: 20px;
+}
+
+.time {
+    margin-left: 20px;
+}
+
+.description {
+    margin-left: 20px;
+    width: 400px;
+}
