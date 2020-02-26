@@ -15,9 +15,9 @@ module.exports = function validateIncidentForm(data) {
     errors.lat = "Latitude field is required";
   }
 
-  // if (Validator.isFloat(data.lng)) {
-  //   errors.lng = "Longitude is invalid";
-  // }
+  if (Validator.isDecimal(data.lng.toString())) {
+    errors.lng = "Longitude is invalid";
+  }
 
   if (Validator.isEmpty(data.lng)) {
     errors.lng = "Longitude field is required";

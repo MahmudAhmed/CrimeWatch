@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Double = require("@mongoosejs/double");
 
 const IncidentSchema = new Schema({
   witness: {
     type: Schema.Types.ObjectId,
-    ref: "users",
-    required: true
+    ref: "users"
+    // required: true
   },
   category: {
     type: String,
@@ -16,13 +17,18 @@ const IncidentSchema = new Schema({
     required: true
   },
   lat: {
-    type: Number,
+    type: Double,
     required: true
   },
 
   lng: {
-    type: Number,
+    type: Double,
     required: true
+  },
+
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
