@@ -15,6 +15,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    // this.handleOtherForm = this.handleOtherForm.bind(this);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -47,6 +48,10 @@ class LoginForm extends React.Component {
     this.props.closeFormModal();
   }
 
+  // handleOtherForm(e) {
+  //   e.preventDefault();
+  //   this.props.otherForm()
+  // }
   // Render the session errors if there are any
   renderErrors() {
     return (
@@ -59,6 +64,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="login-outer-container">
         <div className="login-form-container-1">
@@ -72,23 +78,23 @@ class LoginForm extends React.Component {
               <div className="login-email">
                 {this.renderErrors()}
                 <h5>EMAIL</h5>
-                  <input
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.update("email")}
-                    placeholder="Email"
-                  />
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
               </div>
               <br />
               <div className="login-password">
                 <h5>PASSWORD</h5>
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Password"
-                  />
-              <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+                <br />
                 <div className="login-button">
                   <button
                     className="session-submit"
@@ -97,15 +103,16 @@ class LoginForm extends React.Component {
                     <div className="content-text">Login</div>
                   </button>
                 </div>
-              {/* <input type="submit" value="Submit" /> */}
-                <div className="loginNavContent">
-                  <p><Link to="/signup">Need an account?</Link></p>
-                </div>
-            </div>
+                {/* <input type="submit" value="Submit" /> */}
+                {/* <div className="loginNavContent">
+                  {/* <p><Link to="/signup">Need an account?</Link></p> */}
+                  {/* <div onClick={this.handleOtherForm} className="other-form">Need an Account?</div> */}
+                {/* </div> */} 
+              </div>
             </div>
           </form>
         </div>
-    </div>
+      </div>
     );
   }
 }

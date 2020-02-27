@@ -55,6 +55,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="signup-form-container">
         <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
@@ -92,6 +93,10 @@ class SignupForm extends React.Component {
             <br />
             <input type="submit" value="Submit" />
             {this.renderErrors()}
+          </div>
+          <div className="loginNavContent">
+            {/* <p><Link to="/signup">Need an account?</Link></p> */}
+            {/* <button onClick={()=>this.props.otherForm} className="other-form">Already have an Account?</button> */}
           </div>
         </form>
       </div>
