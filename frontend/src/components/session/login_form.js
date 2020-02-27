@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "../modal/modal.css";
 import { Link } from 'react-router-dom'
+// import SignupFormContainer from '../session/signup_form_container'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -68,8 +69,7 @@ class LoginForm extends React.Component {
     return (
       <div className="login-outer-container">
         <div className="login-form-container-1">
-          <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="login-form">
             <div className="login-message">
               <h2 className="title">Welcome Back!</h2>
               <h3 className="sub-title">We're so excited to see you again!</h3>
@@ -77,40 +77,53 @@ class LoginForm extends React.Component {
             <div className="login-wrapper">
               <div className="login-email">
                 {this.renderErrors()}
-                <h5>EMAIL</h5>
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
-                />
+                <h5>EMAIL:</h5>
+                  <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                    placeholder="Email*"
+                    className="login-emailpw-input"
+                  />
               </div>
               <br />
               <div className="login-password">
-                <h5>PASSWORD</h5>
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
-                <br />
+                <h5>PASSWORD:</h5>
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password*"
+                    className="login-emailpw-input"
+                  />
+              <br />
                 <div className="login-button">
                   <button
                     className="session-submit"
                     type="submit"
                     value="Submit">
-                    <div className="content-text">Login</div>
+                    <div className="content-text">Log In</div>
                   </button>
                 </div>
+<<<<<<< HEAD
                 {/* <input type="submit" value="Submit" /> */}
                 {/* <div className="loginNavContent">
                   {/* <p><Link to="/signup">Need an account?</Link></p> */}
                   {/* <div onClick={this.handleOtherForm} className="other-form">Need an Account?</div> */}
                 {/* </div> */} 
               </div>
+=======
+              {/* <input type="submit" value="Submit" /> */}
+                <div className="loginNavContent">
+                  {/* {signupForm} */}
+                  <p className='login-signup-link'><Link to="/signup" className='login-signup-link'>Need an account?</Link></p>
+                </div>
+            </div>
+>>>>>>> modal_css
             </div>
           </form>
+          <br/>
+          <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
         </div>
       </div>
     );

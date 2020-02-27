@@ -16,6 +16,19 @@ class IndexItem extends React.Component {
                 </div>
                 <p className="description">Description: {this.props.incident.description}</p>
             </div>
+
+            // <div className="incident-container">
+            //     <div className="incident-inner-container">
+            //         <div className="incident-lat-long">
+            //             <p className="lat-long">Lat: {this.props.incident.lat}</p>
+            //             <p className="lat-long">Lng: {this.props.incident.lng}</p>
+            //         </div>
+            //         <div>
+
+            //         </div>
+            //     </div>
+
+            // </div>
         );
     }
 }

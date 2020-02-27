@@ -74,7 +74,6 @@ class MainPage extends React.Component {
             Map will go here!
             <img src="https://media1.giphy.com/media/dOrYKxiH8cQXC/giphy.webp?cid=790b761194726438a76dda80107593e498dcca4345973bf2&rid=giphy.webp" alt=""></img>
             {this.getLinks()})
-
           </div>
           <div className='main-report-list'>
             <ul>
