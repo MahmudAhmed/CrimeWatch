@@ -5,7 +5,7 @@ const User = require("../../models/User");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
+const keys = require("../../config/keys")
 const passport = require("passport");
 
 router.get("/test", (req, res) => {

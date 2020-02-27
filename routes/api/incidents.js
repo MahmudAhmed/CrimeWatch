@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Incident = require("../../models/Incident");
 const validateIncidentForm = require("../../validation/incidents");
-const db = require("./config/keys").mongoURI;
 
 router.get("/test", (req, res) => {
   res.json({ msg: "this is incidents route" });
