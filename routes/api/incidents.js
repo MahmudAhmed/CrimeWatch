@@ -24,7 +24,6 @@ router.get("/:incident_id", (req, res) => {
 });
 
 router.post("/create", (req, res) => {
-  debugger
   const { errors, isValid } = validateIncidentForm(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
