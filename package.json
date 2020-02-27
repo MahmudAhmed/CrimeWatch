@@ -1,5 +1,5 @@
 {
-  "name": "chuckfacts",
+  "name": "CrimeWatch",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -10,7 +10,8 @@
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "dev:debug": "concurrently \"npm run server:debug\" \"npm run frontend\""
+    "dev:debug": "concurrently \"npm run server:debug\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/MahmudAhmed/ChuckFacts#readme",
   "dependencies": {
+    "@mongoosejs/double": "^0.2.0",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -32,6 +34,7 @@
     "jwt-decode": "^2.2.0",
     "mongo-seeding-cli": "^3.4.0",
     "mongoose": "^5.9.2",
+    "mongoose-double": "0.0.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-redux": "^7.2.0",

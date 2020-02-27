@@ -6,6 +6,13 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import {
+  createIncident,
+  fetchAllIncidents,
+  fetchIncident,
+  updateIncident
+} from "./util/incidents_api";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -30,8 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  
+  window.createIncident = createIncident;
+  window.fetchAllIncidents = fetchAllIncidents;
+  window.fetchIncident = fetchIncident;
+  window.updateIncident = updateIncident;
+
   const root = document.getElementById("root");
 
   ReactDOM.render(<Root store={store} />, root);
 });
+
