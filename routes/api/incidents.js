@@ -52,12 +52,17 @@ router.patch("/update/:incident_id", (req, res) => {
   // }
   
   debugger;
-  Incident.updateOne({ _id: req.params.incident_id}, req.body )
+  Incident.findOneAndUpdate({ _id: req.params.incident_id}, req.body, { new: true } )
     .then(incident => {
       debugger
       res.json(incident)
     })
     .catch(err => console.log(err));
+    // Incident.find({ _id: req.params.incident_id}).then( (incident)=> {
+    //   res.json(
+    //     incident
+    //   )
+    // })
 });
 
 module.exports = router;
