@@ -9,18 +9,20 @@
     height: 46vw;
     position: relative;
     overflow: hidden;
-    background-color: rgb(97, 97, 97);
+    background-color: rgb(0, 0, 0);
     flex-direction: column;
     border-right: 3px solid black;
     align-items: center;
+    color: white;
 }
 
 .main-report-list { 
     flex-direction: column;
     display: flex;
     width: 45%;
-    background-color: deepskyblue;
+    background-color: rgb(0, 75, 75);
     align-items: center;
+    color: white;
 }
 
 .main-button {
@@ -29,15 +31,21 @@
     align-items: center;
     padding: 10px;
     border-radius: 5px;
-    background-color: red;
+    background-color: rgb(0, 75, 75);
+    border:2px solid rgb(0, 75, 75);
+    text-decoration: none;
+    color: white;
 }
+
 
 .main-button:hover {
     cursor: pointer;
-    transition: 1.0s;
-    background-color: white;
-    text-decoration: underline;
+    /* transition: 1.0s; */
+    /* text-decoration: underline; */
+    box-shadow:  0px 1px 6px 2px rgb(1, 98, 98);
+    font-weight: 600;
 }
+
 
 .main-footer {
     color: #666666;

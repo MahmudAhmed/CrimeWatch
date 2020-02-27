@@ -1,5 +1,6 @@
 import React from 'react';
 import IncidentIndexItem from './incident_index_item';
+import './incident.css'
 
 const IncidentIndex = props  => {
     const incidents = [
@@ -27,7 +28,7 @@ const IncidentIndex = props  => {
     ];
 
     return (
-        <div>
+        <div className='incident-outer-div'>
             <h1>Report Feed: </h1>
             {incidents.map(incident => (
                 <IncidentIndexItem

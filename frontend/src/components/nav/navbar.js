@@ -53,14 +53,14 @@ class NavBar extends React.Component {
         closeFormModal={() => this.setState({ showReport: false })} />
         : null
       );
-
+        
       return (
         <div className='nav-signup-login'>
+            {/* <Link to={"/"} className="nav-links">WatchList</Link> */}
             <Link to={"/profile"} className="nav-links">Profile</Link>
             <Link to={"/reports"} className="nav-links">All Reports</Link>
-            {/* <Link to={"/new_report"} className="nav-links">Write a Report</Link> */}
             {reportForm}
-            <button onClick={this.toggleReport} className="nav-links-rl"><Link to={"/new_report"}>Write a Report</Link> </button>
+            <button onClick={this.toggleReport} className="nav-links-rl">Write a Report</button>
             <button onClick={this.logoutUser} className='nav-links-rl'>Logout</button>
         </div>
       );
@@ -80,8 +80,8 @@ class NavBar extends React.Component {
 
       return (
         <div className='nav-signup-login'>
-          {/* <Link to={"/login"} className="nav-links">Log In</Link>
-          <Link to={"/signup"} className="nav-links-su">Sign Up</Link> */}
+          {/* {/* <Link to={"/login"} className="nav-links">Log In</Link> */}
+          {/* <Link to={"/signup"} className="nav-links-su">Sign Up</Link> */} 
           {loginForm}
           <button onClick={this.toggleLogin} className="nav-links">Log In</button>
           {signupForm}
@@ -95,7 +95,7 @@ class NavBar extends React.Component {
     return (
       <header className='nav-header'>
         <div className='top-nav-div'>
-          <a href="/"><h1 className='nav-h1'>CrimeWatch</h1></a>
+          <Link to="/"><h1 className='nav-h1'>CrimeWatch</h1></Link>
           {this.getLinks()}
         </div>
       </header>
