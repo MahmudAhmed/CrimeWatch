@@ -27,3 +27,15 @@ export const requestIncident = (incident_id) => dispatch => {
     dispatch(receiveIncident(incident))
   );
 };
+
+export const createIncident = formData => dispatch => {
+  APIUtil.createIncident(formData).then(incident =>
+    dispatch(receiveIncident(incident))
+  );
+};
+
+export const updateIncident = (incident_id,formData) => dispatch => {
+  APIUtil.updateIncident(incident_id, formData).then(incident =>
+    dispatch(receiveIncident(incident))
+  );
+};

@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Incident = require("../../models/Incident");
 const validateIncidentForm = require("../../validation/incidents");
+const db = require("./config/keys").mongoURI;
 
 router.get("/test", (req, res) => {
   res.json({ msg: "this is incidents route" });
 });
 
 router.get("/all", (req, res) => {
+  debugger
   Incident.find({}).then ( (incidents) => {
     res.json({
       incidents
@@ -46,14 +48,8 @@ router.post("/create", (req, res) => {
 
 router.patch("/update/:incident_id", (req, res) => {
 
-  // const { errors, isValid } = validateIncidentForm(req.body);
-  // if (!isValid) {
-  //   return res.status(400).json(errors);
-  // }
-  
   Incident.findOneAndUpdate({ _id: req.params.incident_id }, req.body, {
     new: true,
-    // runValidators: true
   })
     .then(incident => {
       res.json(incident);
