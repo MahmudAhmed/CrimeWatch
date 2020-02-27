@@ -7,9 +7,8 @@ const users = require("./routes/api/users");
 const incidents = require("./routes/api/incidents");
 const passport = require("passport");
 const path = require("path");
-const dotenv = require("dotenv");
+require("dotenv").config({ path: "ENV_FILENAME" });
 
-dotenv.config();
 mongoose.set("runValidators", true);
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
