@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 
-function Modal({modal, closeModal}) {
-    if (!modal) {
+function Modal(props) {
+    // debugger
+    if (!props) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (props.modal) {
         case 'login':
             component = <LoginFormContainer />;
             break;
@@ -19,12 +20,14 @@ function Modal({modal, closeModal}) {
         default:
             return null;
     }
+    // debugger
     return (
-        { component }
+        component
     );
 }
 
 const mapStateToProps = state => {
+    // debugger
     return {
         modal: state.modal
     };

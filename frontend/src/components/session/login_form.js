@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "../modal/modal.css";
 import { Link } from 'react-router-dom'
+import Modal from "../modal/modal";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    // this.handleOtherForm = this.handleOtherForm.bind(this);
+    this.handleOtherForm = this.handleOtherForm.bind(this);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -38,6 +39,7 @@ class LoginForm extends React.Component {
   // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
+    e.stopPropagation();
 
     let user = {
       email: this.state.email,
@@ -45,13 +47,14 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user);
-    this.props.closeFormModal();
+    this.props.closeModal();
   }
 
-  // handleOtherForm(e) {
-  //   e.preventDefault();
-  //   this.props.otherForm()
-  // }
+  handleOtherForm(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.otherForm()
+  }
   // Render the session errors if there are any
   renderErrors() {
     return (
@@ -64,11 +67,11 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     return (
       <div className="login-outer-container">
         <div className="login-form-container-1">
-          <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
+          <div onClick={() => this.props.closeModal()} className="modal-overlay">X</div>
           <form onSubmit={this.handleSubmit}>
             <div className="login-message">
               <h2 className="title">Welcome Back!</h2>
@@ -104,10 +107,9 @@ class LoginForm extends React.Component {
                   </button>
                 </div>
                 {/* <input type="submit" value="Submit" /> */}
-                {/* <div className="loginNavContent">
-                  {/* <p><Link to="/signup">Need an account?</Link></p> */}
-                  {/* <div onClick={this.handleOtherForm} className="other-form">Need an Account?</div> */}
-                {/* </div> */} 
+                <div className="loginNavContent">
+                  <button onClick={this.handleOtherForm} className="other-form">Need an Account?</button>
+                </div> 
               </div>
             </div>
           </form>

@@ -5,19 +5,20 @@ import ReportFormContainer from "../report/report_form_container";
 import "../modal/modal.css";
 import { Link } from "react-router-dom";
 import "./navbar.css"
+import Modal from "../modal/modal";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-    this.toggleLogin = this.toggleLogin.bind(this);
-    this.toggleSignup = this.toggleSignup.bind(this);
+    // this.toggleLogin = this.toggleLogin.bind(this);
+    // this.toggleSignup = this.toggleSignup.bind(this);
     this.toggleReport = this.toggleReport.bind(this);
 
     this.state = {
-      showLogin: false,
-      showSignup: false,
+      // showLogin: false,
+      // showSignup: false,
       showReport: false
     };
   }
@@ -27,17 +28,17 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  toggleLogin() {
-    this.setState({
-      showLogin: !this.state.showLogin
-    });
-  }
+  // toggleLogin(e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   this.props.openModal()
+  // }
 
-  toggleSignup() {
-    this.setState({
-      showSignup: !this.state.showSignup
-    })
-  }
+  // toggleSignup(e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   this.props.openModal()
+  // }
 
   toggleReport() {
     this.setState({
@@ -47,6 +48,7 @@ class NavBar extends React.Component {
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
+    // debugger
     if (this.props.loggedIn) {
       const reportForm = (this.state.showReport ?
         <ReportFormContainer showModal={this.state.showReport}
@@ -65,33 +67,33 @@ class NavBar extends React.Component {
         </div>
       );
     } else {
-      const loginForm = (this.state.showLogin ?
-        <LoginFormContainer showModal={this.state.showLogin}
-          closeFormModal={() => this.setState({ showLogin: false })} />
-        : null
-      );
+      // const loginForm = (this.state.showLogin ?
+      //   <LoginFormContainer showModal={this.state.showLogin}
+      //     closeFormModal={() => this.setState({ showLogin: false })} />
+      //   : null
+      // );
 
-      const signupForm = (this.state.showSignup ?
-        <SignupFormContainer showModal={this.state.showSignup}
-          closeFormModal={() => this.setState({ showSignup: false })} />
-        : null
-      );
+      // const signupForm = (this.state.showSignup ?
+      //   <SignupFormContainer showModal={this.state.showSignup}
+      //     closeFormModal={() => this.setState({ showSignup: false })} />
+      //   : null
+      // );
 
 
       return (
         <div className='nav-signup-login'>
-          {/* <Link to={"/login"} className="nav-links">Log In</Link>
-          <Link to={"/signup"} className="nav-links-su">Sign Up</Link> */}
-          {loginForm}
-          <button onClick={this.toggleLogin} className="nav-links">Log In</button>
-          {signupForm}
-          <button onClick={this.toggleSignup} className="nav-links-su">Sign Up</button>
+          {/* {loginForm} */}
+          <button onClick={() => this.props.openModal('login')} className="nav-links">Log In</button>
+          {/* {signupForm} */}
+          <button onClick={() => this.props.openModal('signup')} className="nav-links-su">Sign Up</button>
+          <Modal />
         </div>
       );
     }
   }
 
   render() {
+    // debugger
     return (
       <header className='nav-header'>
         <div className='top-nav-div'>
