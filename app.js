@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys_dev").mongoURI;
 const bodyParser = require("body-parser");
 const users = require("./routes/api/users");
 const incidents = require("./routes/api/incidents");
 const passport = require("passport");
 const path = require("path");
-require("dotenv").config({ path: "ENV_FILENAME" });
 
-mongoose.set("runValidators", true);
+// mongoose.set("runValidators", true);
+debugger
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB successfully"))
