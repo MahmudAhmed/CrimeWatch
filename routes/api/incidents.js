@@ -8,6 +8,7 @@ router.get("/test", (req, res) => {
 });
 
 router.get("/all", (req, res) => {
+  debugger
   Incident.find({}).then ( (incidents) => {
     res.json({
       incidents
