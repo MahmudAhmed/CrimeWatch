@@ -24,7 +24,7 @@ router.get("/:incident_id", (req, res) => {
 });
 
 router.post("/create", (req, res) => {
-  debugger;
+  debugger
   const { errors, isValid } = validateIncidentForm(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
@@ -51,18 +51,17 @@ router.patch("/update/:incident_id", (req, res) => {
   //   return res.status(400).json(errors);
   // }
   
-  debugger;
-  Incident.findOneAndUpdate({ _id: req.params.incident_id}, req.body, { new: true } )
+  Incident.findOneAndUpdate({ _id: req.params.incident_id }, req.body, {
+    new: true,
+    // runValidators: true
+  })
     .then(incident => {
-      debugger
-      res.json(incident)
+      res.json(incident);
     })
-    .catch(err => console.log(err));
-    // Incident.find({ _id: req.params.incident_id}).then( (incident)=> {
-    //   res.json(
-    //     incident
-    //   )
-    // })
+    .catch(err => {
+      res.json(err.message)
+    })
+
 });
 
 module.exports = router;
