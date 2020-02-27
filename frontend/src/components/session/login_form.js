@@ -105,21 +105,12 @@ class LoginForm extends React.Component {
                     <div className="content-text">Log In</div>
                   </button>
                 </div>
-<<<<<<< HEAD
-                {/* <input type="submit" value="Submit" /> */}
-                {/* <div className="loginNavContent">
-                  {/* <p><Link to="/signup">Need an account?</Link></p> */}
-                  {/* <div onClick={this.handleOtherForm} className="other-form">Need an Account?</div> */}
-                {/* </div> */} 
-              </div>
-=======
               {/* <input type="submit" value="Submit" /> */}
                 <div className="loginNavContent">
                   {/* {signupForm} */}
                   <p className='login-signup-link'><Link to="/signup" className='login-signup-link'>Need an account?</Link></p>
                 </div>
             </div>
->>>>>>> modal_css
             </div>
           </form>
           <br/>
