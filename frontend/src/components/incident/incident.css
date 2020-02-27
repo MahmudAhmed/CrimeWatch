@@ -1,7 +1,9 @@
 .incident-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid black;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .direction {
@@ -33,4 +35,9 @@
 .description {
     margin-left: 20px;
     width: 400px;
+}
+
+.incident-outer-div > h1 {
+    display: flex;
+    justify-content: center;
 }

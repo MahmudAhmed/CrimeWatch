@@ -6,8 +6,10 @@
   right: 0;
   background-color: rgba(0,0,0, 0.44);
   z-index: 2000;
-  color: white;
-
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
    /* width: 480px;
    padding: 40px;
    font-size: 18px;
@@ -24,38 +26,17 @@
 .login-form-container-1 {
   display: flex;
   justify-content: center;
-  /* top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; */
   background-color: rgba(0,0,0, 0.44);
   z-index: 2000;
-  /* background-color: gray; */
+  border-radius: 25px;
+  width: 40%;
+  background-color: white;
+  border:3px solid rgb(0, 75, 75);
+}
 
-  width: 100%;
+.login-form {
+	margin-top: 20px;
 	text-align: center;
-	position: absolute;
-	top: 25%;
-	left: 25%;
-	bottom: 0;
-	right: 0;
-	width: 60%;
-	height: 60%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-  justify-content: center;
-  /* background-color: yellow; */
-  /* background-image: url(https://cdn1.vectorstock.com/i/1000x1000/41/15/abstract-protection-shield-on-black-background-vector-4174115.jpg); */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center top;
-  background-color: rgb(2, 2, 108);
 }
 
 .login-wrapper {
@@ -63,6 +44,10 @@
 	text-align: center;
 	margin-top: -20px;
 	margin-bottom: -20px;
+	color: rgb(0, 75, 75);
+}
+.login-wrapper  h5 {
+	font-weight: bold;
 }
 
 .login-email {
@@ -74,31 +59,56 @@
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
+	
 }
 
 .login-password {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  margin-top: -20px;
+}
+
+.login-message {
+	border-bottom: 1px solid rgb(235, 235, 235);
+	color: black;
 }
 
 .login-message > h2 {
-	font-size: 26px;
-	font-family: 'Roboto', sans-serif;
+	font-size: 32px;
+	/* font-family: 'Roboto', sans-serif; */
 	line-height: 32px;
-	margin-bottom: 8px;
-	font-weight: 300;
-	color: #fff;
-	margin-top: -10px;
+	/* margin-bottom: 8px; */
+	font-weight: 500;
+	color: rgb(0, 75, 75);
+	/* margin-top: -10px; */
 }
 
 .login-message > h3 {
-	color: white;
+	color: rgb(0, 75, 75);
 	font-size: 18px;
-	font-family: 'Roboto', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
 	line-height: 22px;
 	font-weight: 500;
 	margin-top: -2px;
+	
+}
+
+.login-emailpw-input {
+	height: 30px;
+	border: 1px solid rgb(0, 75, 75);
+	border-radius: 5px;
+	outline: none;
+}
+
+.login-emailpw-input:hover {
+	box-shadow:  0px 1px 6px 1px rgb(0, 75, 75);
+}
+
+.login-emailpw-input::placeholder {
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
 }
 
 .login-button {
@@ -110,19 +120,59 @@
 	align-items: center;
 	box-sizing: border-box;
   background: none;
+  padding: 10px 30px;
+}
+
+.content-text {
+	padding: 10px 30px;
 }
 
 .loginNavContent {
-		font-family: 'Roboto', sans-serif;
+		/* font-family: 'Roboto', sans-serif; */
 		position: relative;
 		
 }
 
-.loginNavContent > span {
+.loginNavContent > Link {
+	text-decoration: none;
+
+}
+
+.session-submit {
+	background-color: rgb(0, 75, 75);
+	color: white;
+	font-weight: 800;
+	font-size: 12px;
+	border-radius: 5px;
+	outline: none;
+	border: 2px solid rgb(0, 75, 75);
+}
+
+.session-submit:hover { 
+	cursor: pointer;
+	transition: .75s;
+	box-shadow:  0px 1px 6px 2px rgb(0, 75, 75);
+	text-decoration: underline;
+}
+
+.modal-overlay {
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.modal-overlay:hover {
+	font-weight: bold;
+}
+
+.login-signup-link {
+	text-decoration: none;
+	color: rgb(60, 60, 236);
 	font-size: 14px;
-	color: #72767d;
-	float: left;
-	margin-top: -10px;
+}
+
+.login-signup-link:hover {
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 
@@ -141,7 +191,7 @@
 } */
 
 
-
+/* BELOW IS SIGNUP CSS  */
 .signup-form-container {
   position: fixed;
   top: 0;
@@ -152,6 +202,48 @@
   z-index: 2000;
 }
 
+.signup-nav-content {
+	height: 50px;
+	padding: 5px;
+	margin-top: -15px;
+}
+
+.signup-login-link {
+	margin-top: -20px;
+	text-decoration: none;
+	color: rgb(60, 60, 236);
+	font-size: 14px;
+}
+
+.signup-login-link:hover {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.signup-button {
+	position: relative;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	box-sizing: border-box;
+	background: none;
+	padding: 10px 30px;
+	margin-top: 15px;
+}
+
+.content-text-signup {
+	padding: 10px 30px;
+}
+
+
+
+
+
+
+
+/* BELOW IS REPORT FORM CSS */
 .report-form-container {
   position: fixed;
   top: 0;
@@ -160,4 +252,190 @@
   right: 0;
   background-color: rgba(0,0,0, 0.44);
   z-index: 2000;
+  color: gray;
+}
+
+.report-outer-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0, 0.44);
+  z-index: 2000;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.report-form-container-1 {
+	display: flex;
+  justify-content: center;
+  background-color: rgba(0,0,0, 0.44);
+  z-index: 2000;
+  border-radius: 25px;
+  width: 55%;
+  height: 65%;
+  background-color: white;
+  border:3px solid rgb(0, 75, 75);
+}
+
+.report-message {
+	border-bottom: 1px solid rgb(235, 235, 235);
+	color: rgb(0, 75, 75);
+	margin-top: -10px;
+}
+
+.report-message > h2 {
+	font-size: 32px;
+	/* font-family: 'Roboto', sans-serif; */
+	line-height: 32px;
+	/* margin-bottom: 8px; */
+	font-weight: 500;
+	/* margin-top: -10px; */
+}
+
+.report-form {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+	margin-bottom: -15px;
+	/* background-color: yellow; */
+}
+
+.report-lg-lat {
+	display: flex;
+	padding: 5px;
+	color: rgb(0, 75, 75);
+	font-weight: bold;
+}
+
+.report-location {
+	display: flex;
+	/* background-color: pink; */
+	border:1px solid rgb(0, 75, 75);
+	margin-left: 5px;
+	padding: 7px 10px;
+	font-weight: bold;
+	border-radius: 5px;
+	outline: none;
+	
+}
+
+.report-location::placeholder {
+	text-align: center;
+	/* margin-left: 15px; */
+}
+
+.report-location:hover {
+	transition: 0.75s;
+	box-shadow:  0px 1px 6px 1px rgb(0, 75, 75);
+}
+
+.report-dropd {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	padding-bottom: 10px;
+	/* padding-left: 5px; */
+	/* background-color: purple; */
+}
+
+.report-drop-select {
+	margin-left: 10px;
+	border: 1px solid rgb(0, 75, 75);
+	background-color: white;
+	color: rgb(0, 75, 75);
+	font-weight: bold;
+	font: 12px;
+	outline: none;
+}
+.report-drop-select:hover {
+	cursor: pointer;
+	transition: 0.75s;
+	box-shadow:  0px 1px 6px 1px rgb(0, 75, 75);
+}
+
+.report-crime-cat {
+	color: rgb(0, 75, 75);
+	font-weight: bold;
+}
+
+.report-crime-cat > select {
+	padding-right: 10px;
+}
+
+#category {
+	padding: 10px 20px;
+}
+
+.report-text-des {
+	color: rgb(0, 75, 75);
+	font-weight: bold;
+}
+
+.report-textarea {
+	display: flex;
+	/* background-color: gray; */
+	justify-content: center;
+	height: 30%;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.report-textarea-2 {
+	width: 100%;
+	outline: none;
+	border: 1px solid rgb(0, 75, 75);
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.report-textarea-2::placeholder {
+	/* padding: 10px; */
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.report-textarea-2:hover {
+	transition: 0.75s;
+	box-shadow:  0px 1px 6px 1px rgb(0, 75, 75);
+}
+
+.report-submit {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+	/* background-color: green; */
+}
+
+.report-submit-in {
+	padding: 10px 30px;
+	color: white;
+	background-color: rgb(0, 75, 75);
+	border: 1px solid rgb(0, 75, 75);
+	font-weight: bold;
+	font-size: 12px;
+	border-radius: 5px;
+}
+
+.report-submit-in:hover {
+	font-weight: bold;
+	box-shadow:  0px 1px 6px 2px rgb(0, 75, 75);
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.report-modal-overlay {
+	cursor: pointer;
+	margin-top: 10px;
+	/* position: absolute; */
+	/* top: 170px;
+	right: 320px; */
+}
+
+.report-modal-overlay:hover {
+	font-weight: bold;
 }
