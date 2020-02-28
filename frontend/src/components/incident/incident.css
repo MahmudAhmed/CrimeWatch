@@ -9,6 +9,10 @@
     /* overflow: break-word; */
 }
 
+/* .incident-container:hover {
+
+} */
+
 .direction {
     display: flex;
     flex-direction: row;

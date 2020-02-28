@@ -88,7 +88,7 @@ class MainPage extends React.Component {
             {this.getLinks()}
           </div>
           <div className="main-report-list">
-            <h2>All Incidents Near You:</h2>
+            <div><h2>All Incidents Near You:</h2></div>
             <ul className='div-ul'>
               {/* <li>Reports will go here!</li> */}
               {reports}
