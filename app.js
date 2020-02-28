@@ -8,7 +8,7 @@ const incidents = require("./routes/api/incidents");
 const passport = require("passport");
 const path = require("path");
 
-debugger
+// debugger
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB successfully"))

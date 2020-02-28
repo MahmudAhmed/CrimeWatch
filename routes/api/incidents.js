@@ -8,7 +8,7 @@ router.get("/test", (req, res) => {
 });
 
 router.get("/all", (req, res) => {
-  debugger
+  // debugger
   Incident.find({}).then ( (incidents) => {
     res.json({
       incidents
@@ -26,7 +26,7 @@ router.get("/:incident_id", (req, res) => {
 
 router.post("/create", (req, res) => {
   const { errors, isValid } = validateIncidentForm(req.body);
-  debugger
+  // debugger
   if (!isValid) {
     return res.status(400).json(errors);
   }

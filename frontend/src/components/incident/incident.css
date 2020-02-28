@@ -1,9 +1,11 @@
 .incident-container {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    border: 2px solid black;
     justify-content: space-around;
     text-align: center;
+    border-radius: 5px;
+    margin-bottom: 15px;
     /* overflow: break-word; */
 }
 

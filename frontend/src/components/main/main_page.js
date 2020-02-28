@@ -72,7 +72,7 @@ class MainPage extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     const reports = Object.values(this.props.incidents).length > 0 ? (this.props.incidents.map( incident => 
         <IncidentIndexItem key={incident._id} incident={incident}/>)) : [];
     return (
@@ -88,14 +88,16 @@ class MainPage extends React.Component {
             {this.getLinks()}
           </div>
           <div className="main-report-list">
-            <ul>
+            <h2>All Incidents Near You:</h2>
+            <ul className='div-ul'>
               {/* <li>Reports will go here!</li> */}
               {reports}
             </ul>
           </div>
         </div>
-        <div></div>
+        <div className='main-footer-div'>
         <footer className="main-footer">CrimeWatch &copy; 2020</footer>
+        </div>
       </div>
     );
   }

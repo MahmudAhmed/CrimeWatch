@@ -57,8 +57,8 @@ class NavBar extends React.Component {
       return (
         <div className='nav-signup-login'>
             {/* <Link to={"/"} className="nav-links">WatchList</Link> */}
-            <Link to={"/profile"} className="nav-links">Profile</Link>
-            <Link to={"/reports"} className="nav-links">All Reports</Link>
+            {/* <Link to={"/profile"} className="nav-links">Profile</Link> */}
+            {/* <Link to={"/reports"} className="nav-links">All Reports</Link> */}
             {reportForm}
             <button onClick={this.toggleReport} className="nav-links-rl">Write a Report</button>
             <button onClick={this.logoutUser} className='nav-links-rl'>Logout</button>
