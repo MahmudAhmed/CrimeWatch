@@ -55,8 +55,8 @@ class SignupForm extends React.Component {
   render() {
     // debugger
     return (
-      <div className="login-outer-container">
-        <div className="login-form-container-1">
+      <div className="signup-outer-container">
+        <div className="signup-form-container-1">
           <form onSubmit={this.handleSubmit} className="login-form">
             {this.props.errors.map((err, idx) => (
               <div key={idx} className="errors">
@@ -67,15 +67,28 @@ class SignupForm extends React.Component {
               <h2 className="title">Welcome to CrimeWatch!</h2>
             </div>
             <div className="login-wrapper">
-              <div className="login-email">
-                <h5>EMAIL:</h5>
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email*"
-                  className="login-emailpw-input"
-                />
+                {this.renderErrors()}
+                <div className="login-email">
+                  <h5>NAME:</h5>
+                  <input
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.update("name")}
+                    placeholder="Name*"
+                    className="login-emailpw-input"
+                    />
+                </div>
+                </div>
+                <div>
+                <div className="login-email">
+                    <h5>EMAIL:</h5>
+                    <input
+                      type="text"
+                      value={this.state.email}
+                      onChange={this.update("email")}
+                      placeholder="Email*"
+                      className="login-emailpw-input"
+                    />
               </div>
               <br />
               <div className="login-password">
