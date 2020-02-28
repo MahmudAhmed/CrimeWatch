@@ -25,10 +25,7 @@ class ReportForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        e.stopPropagation();
-        // this.props.closeModal();
-        // debugger
-        const { closeFormModal, userId, createIncident, errors } = this.props; 
+        const { userId, createIncident } = this.props; 
         const formData = {
           witness: userId,
           category: this.state.category,

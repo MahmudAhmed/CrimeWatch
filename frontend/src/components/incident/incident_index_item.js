@@ -8,7 +8,6 @@ class IndexItem extends React.Component {
         const date = this.props.incident.date.slice(0, 10).split("-");
         return (
           <div className="incident-container">
-
             <div className="cat-time">
               <p className="category">
                 {this.props.incident.category}

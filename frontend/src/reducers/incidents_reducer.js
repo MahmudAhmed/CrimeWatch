@@ -1,4 +1,4 @@
-import { RECEIVE_INCIDENTS, RECEIVE_INCIDENT, RECEIVE_INCIDENT_ERRORS } from "../actions/incident_action";
+import { RECEIVE_INCIDENTS, RECEIVE_INCIDENT} from "../actions/incident_action";
 
 
 export default function(state = {}, action) {
