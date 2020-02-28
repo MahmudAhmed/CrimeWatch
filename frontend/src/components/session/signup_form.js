@@ -109,7 +109,7 @@ class SignupForm extends React.Component {
             {this.renderErrors()}
           </div>
           <button onClick={this.handleOtherForm} className="other-form">
-              Need an Account?
+              Already have an Account?
           </button>
         </form>
       </div>
