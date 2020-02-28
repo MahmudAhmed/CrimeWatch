@@ -14,12 +14,12 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
     // this.toggleLogin = this.toggleLogin.bind(this);
     // this.toggleSignup = this.toggleSignup.bind(this);
-    this.toggleReport = this.toggleReport.bind(this);
+    // this.toggleReport = this.toggleReport.bind(this);
 
     this.state = {
       // showLogin: false,
       // showSignup: false,
-      showReport: false
+      // showReport: false
     };
   }
 
@@ -40,30 +40,31 @@ class NavBar extends React.Component {
   //   this.props.openModal()
   // }
 
-  toggleReport() {
-    this.setState({
-      showReport: !this.state.showReport
-    })
-  }
+  // toggleReport() {
+  //   this.setState({
+  //     showReport: !this.state.showReport
+  //   })
+  // }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     // debugger
     if (this.props.loggedIn) {
-      const reportForm = (this.state.showReport ?
-        <ReportFormContainer showModal={this.state.showReport}
-        closeFormModal={() => this.setState({ showReport: false })} />
-        : null
-      );
+      // const reportForm = (this.state.showReport ?
+      //   <ReportFormContainer showModal={this.state.showReport}
+      //   closeFormModal={() => this.setState({ showReport: false })} />
+      //   : null
+      // );
 
       return (
         <div className='nav-signup-login'>
             <Link to={"/profile"} className="nav-links">Profile</Link>
             <Link to={"/reports"} className="nav-links">All Reports</Link>
             {/* <Link to={"/new_report"} className="nav-links">Write a Report</Link> */}
-            {reportForm}
-            <button onClick={this.toggleReport} className="nav-links-rl">Write a Report</button>
+            {/* {reportForm} */}
+            <button onClick={() => this.props.openModal('report')} className="nav-links-rl">Write a Report</button>
             <button onClick={this.logoutUser} className='nav-links-rl'>Logout</button>
+            <Modal />
         </div>
       );
     } else {

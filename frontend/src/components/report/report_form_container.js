@@ -1,15 +1,16 @@
 import { connect } from "react-redux";
 import ReportForm from "./report_form";
+import { closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = state => {
     return {
-
+        formType: 'report'
     };
 };
 
 const mapDispatchToProps = dispatch => {
-    return{
-
+    return {
+      closeModal: () => dispatch(closeModal())
     };
 };
 

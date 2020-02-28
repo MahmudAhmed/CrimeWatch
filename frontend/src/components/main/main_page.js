@@ -1,6 +1,8 @@
 import React from "react";
 import ReportFormContainer from "../report/report_form_container";
 import LoginFormContainer from "../session/login_form_container";
+import Modal from "../modal/modal";
+
 import './main_page.css'
 // import NavBar from '../nav/navbar';
 
@@ -34,30 +36,32 @@ class MainPage extends React.Component {
 
   getLinks() {
     if (this.props.loggedIn) {
-      const reportForm = (this.state.showReport ?
-        <ReportFormContainer showModal={this.state.showReport}
-          closeFormModal={() => this.setState({ showReport: false })} />
-        : null
-      );
+      // const reportForm = (this.state.showReport ?
+      //   <ReportFormContainer showModal={this.state.showReport}
+      //     closeFormModal={() => this.setState({ showReport: false })} />
+      //   : null
+      // );
 
       return (
         <>
-          {reportForm}
-          <button onClick={this.toggleReport} className='main-button'>Make a New Report will go here!</button>
+          {/* {reportForm} */}
+          <button onClick={() => this.props.openModal('report')} className='main-button'>Make a New Report will go here!</button>
+          <Modal />
         </>
       );
     } else {
-      const loginForm = (this.state.showLogin ?
-        <LoginFormContainer showModal={this.state.showLogin}
-          closeFormModal={() => this.setState({ showLogin: false })} />
-        : null
-      );
+      // const loginForm = (this.state.showLogin ?
+      //   <LoginFormContainer showModal={this.state.showLogin}
+      //     closeFormModal={() => this.setState({ showLogin: false })} />
+      //   : null
+      // );
 
 
       return (
         <>
-          {loginForm}
-          <button onClick={this.toggleLogin} className='main-button'>Make a New Report will go here!</button>
+          {/* {loginForm} */}
+          <button onClick={() => this.props.openModal('login')} className='main-button'>Make a New Report will go here!</button>
+          <Modal />
         </>
       );
     }

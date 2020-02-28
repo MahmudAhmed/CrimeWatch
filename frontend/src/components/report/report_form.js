@@ -9,13 +9,15 @@ class ReportForm extends React.Component {
     };
 
     handleSubmit(e) {
-        this.props.closeFormModal();
+        e.preventDefault();
+        e.stopPropagation();
+        this.props.closeModal();
     }
 
     render() {
         return (
             <div className="report-form-container">
-                <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
+                <div onClick={() => this.props.closeModal()} className="modal-overlay">X</div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="report-form">
                         <br />
