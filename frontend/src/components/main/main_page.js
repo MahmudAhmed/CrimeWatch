@@ -58,7 +58,7 @@ class MainPage extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     const reports = Object.values(this.props.incidents).length > 0 ? (this.props.incidents.map( incident => 
         <IncidentIndexItem key={incident._id} incident={incident}/>)) : [];
     return (

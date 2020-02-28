@@ -26,8 +26,8 @@ class ReportForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         e.stopPropagation();
-        this.props.closeModal();
-        debugger
+        // this.props.closeModal();
+        // debugger
         const { closeFormModal, userId, createIncident, errors } = this.props; 
         const formData = {
           witness: userId,
@@ -123,7 +123,7 @@ class ReportForm extends React.Component {
               </form>
               <div
                 className="report-modal-overlay"
-                onClick={() => this.props.closeFormModal()}
+                onClick={() => this.props.closeModal()}
               >
                 X
               </div>

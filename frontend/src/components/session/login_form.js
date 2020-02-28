@@ -116,7 +116,7 @@ class LoginForm extends React.Component {
             </div>
           </form>
           <br/>
-          <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
+          <div onClick={() => this.props.closeModal()} className="modal-overlay">X</div>
         </div>
       </div>
     );
