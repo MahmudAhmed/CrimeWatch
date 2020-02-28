@@ -34,7 +34,7 @@ class ReportForm extends React.Component {
           lat: this.state.lat.toString(),
           lng: this.state.lng.toString()
         };
-      createIncident(formData).then(() => closeFormModal())
+      createIncident(formData)
     }
 
     handleChange(field){

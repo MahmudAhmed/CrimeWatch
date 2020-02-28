@@ -1,4 +1,5 @@
 import * as APIUtil from "../util/incidents_api";
+import { closeModal } from "./modal_actions";
 
 export const RECEIVE_INCIDENT = "RECEIVE_INCIDENT";
 export const RECEIVE_INCIDENTS = "RECEIVE_INCIDENTS";
@@ -36,7 +37,8 @@ export const requestIncident = (incident_id) => dispatch => {
 
 export const createIncident = formData => dispatch => {
   APIUtil.createIncident(formData).then(res => {
-    dispatch(receiveIncident(res.data))
+    dispatch(receiveIncident(res.data));
+    dispatch(closeModal());
     })
     .catch( err => dispatch(receiveIncidentErrors(err.response.data)))
 };
@@ -46,3 +48,4 @@ export const updateIncident = (incident_id,formData) => dispatch => {
     dispatch(receiveIncident(incident))
   );
 };
+
