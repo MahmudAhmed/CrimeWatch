@@ -3,7 +3,7 @@
 /frontend/node_modules
 /frontend/.pnp
 /frontend/.pnp.js
-/frontend/src/config/keys_dev
+/frontend/src/config/keys_dev.js
 
 # testing
 /frontend/coverage
