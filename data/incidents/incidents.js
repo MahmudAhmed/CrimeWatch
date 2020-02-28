@@ -46,5 +46,37 @@ module.exports = [
     time: "5:30pm",
     description:
       "A man tried to rob a Chase Bank in Coney Island. The Bank has locked the gates and trapped the robber inside."
+  },
+  {
+    lat: 40.7661906,
+    lng: -73.846353,
+    category: "Street-Fight",
+    time: "4:00am",
+    description:
+      "2 Drunks were arguing and got physical in the street causing a massive disturbance."
+  },
+  {
+    lat: 41.6939282,
+    lng: -73.9361805,
+    category: "Theft",
+    time: "12:00pm",
+    description:
+      "A group of people were stealing the tables and chairs off a porch of a residential house."
+  },
+  {
+    lat: 41.3169448,
+    lng: -74.1272352,
+    category: "Assault",
+    time: "6:00pm",
+    description:
+      "A woman was seen attcking an elderly woman in front of the shopping district and tried running away."
+  },
+  {
+    lat: 40.7288516,
+    lng: -73.9231482,
+    category: "Homicide",
+    time: "5:30am",
+    description:
+      "A Body was found inside a trashcan belonging to the CheeseCake Factory."
   }
 ];
