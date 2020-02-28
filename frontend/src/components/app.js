@@ -15,6 +15,7 @@ const App = () => (
     {/* <Modal /> */}
     <Switch>
       <Route exact path="/" component={MainPageContainer} />
+      <AuthRoute exact path="/" component={MainPageContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
     </Switch>
   </div>

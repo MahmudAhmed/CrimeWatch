@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Modal from "../modal/modal";
+import { Link } from 'react-router-dom'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -66,53 +67,68 @@ class SignupForm extends React.Component {
   render() {
     // debugger
     return (
-      <div className="signup-form-container">
-        <div
-          onClick={() => this.props.closeModal()}
-          className="modal-overlay"
-        >
-          X
-        </div>
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br />
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <br />
-            <input
-              type="text"
-              value={this.state.name}
-              onChange={this.update("name")}
-              placeholder="Name"
-            />
-
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
+      <div className="login-outer-container">
+        <div className="login-form-container-1">
+          <form onSubmit={this.handleSubmit} className="login-form">
+          <div className="login-message">
+            <h2 className="title">Welcome to CrimeWatch!</h2>
           </div>
-          <button onClick={this.handleOtherForm} className="other-form">
-              Already have an Account?
-          </button>
-        </form>
-      </div>
+            <div className="login-wrapper">
+              <div className="login-email">
+                {this.renderErrors()}
+                <h5>EMAIL:</h5>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email*"
+                  className="login-emailpw-input"
+                />
+              </div>
+              <br />
+              <div className="login-password">
+                <h5>PASSWORD:</h5>
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password*"
+                  className="login-emailpw-input"
+                />
+              </div>
+              <br />
+              <div className="login-password">
+                <h5>CONFIRM PASSWORD:</h5>
+                <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password*"
+                  className="login-emailpw-input"
+                />
+              <br />
+              {/* <input type="submit" value="Submit" /> */}
+                <div className="signup-button">
+                  <button
+                    className="session-submit"
+                    type="submit"
+                    value="Submit">
+                    <div className="content-text-signup">Sign Up</div>
+                  </button>
+                </div>
+              {this.renderErrors()}
+            </div>
+              <div className="signup-nav-content">
+                {/* {signupForm} */}
+                <p className='signup-login-link'><Link to="/login" className='signup-login-link'>Already have an account?</Link></p>
+              </div>
+            </div>
+          </form>
+          <div onClick={() => this.props.closeFormModal()} className="modal-overlay">X</div>
+        </div>
+        </div>
+        // </div>
+      
     );
   }
 }

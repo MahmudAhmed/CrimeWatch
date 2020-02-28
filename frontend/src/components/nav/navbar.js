@@ -58,6 +58,7 @@ class NavBar extends React.Component {
 
       return (
         <div className='nav-signup-login'>
+            {/* <Link to={"/"} className="nav-links">WatchList</Link> */}
             <Link to={"/profile"} className="nav-links">Profile</Link>
             <Link to={"/reports"} className="nav-links">All Reports</Link>
             {/* <Link to={"/new_report"} className="nav-links">Write a Report</Link> */}
@@ -98,7 +99,7 @@ class NavBar extends React.Component {
     return (
       <header className='nav-header'>
         <div className='top-nav-div'>
-          <a href="/"><h1 className='nav-h1'>CrimeWatch</h1></a>
+          <Link to="/"><h1 className='nav-h1'>CrimeWatch</h1></Link>
           {this.getLinks()}
         </div>
       </header>

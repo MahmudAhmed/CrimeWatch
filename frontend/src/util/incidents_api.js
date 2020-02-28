@@ -9,6 +9,7 @@ export const fetchIncident = (incident_id) => {
 };
 
 export const createIncident = (formData) => {
+  debugger
   return axios.post("/api/incidents/create", formData);
 };
 

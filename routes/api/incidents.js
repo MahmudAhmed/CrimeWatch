@@ -25,6 +25,7 @@ router.get("/:incident_id", (req, res) => {
 
 router.post("/create", (req, res) => {
   const { errors, isValid } = validateIncidentForm(req.body);
+  debugger
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -45,14 +46,8 @@ router.post("/create", (req, res) => {
 
 router.patch("/update/:incident_id", (req, res) => {
 
-  // const { errors, isValid } = validateIncidentForm(req.body);
-  // if (!isValid) {
-  //   return res.status(400).json(errors);
-  // }
-  
   Incident.findOneAndUpdate({ _id: req.params.incident_id }, req.body, {
     new: true,
-    // runValidators: true
   })
     .then(incident => {
       res.json(incident);

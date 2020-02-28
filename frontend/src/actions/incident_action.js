@@ -1,7 +1,9 @@
 import * as APIUtil from "../util/incidents_api";
+import { closeModal } from "./modal_actions";
 
 export const RECEIVE_INCIDENT = "RECEIVE_INCIDENT";
 export const RECEIVE_INCIDENTS = "RECEIVE_INCIDENTS";
+export const RECEIVE_INCIDENT_ERRORS = "RECEIVE_INCIDENT_ERRORS";
 
 
 const receiveIncident = incident => ({
@@ -14,12 +16,17 @@ const receiveIncidents = incidents => ({
   incidents
 });
 
+const receiveIncidentErrors = errors => ({
+  type: RECEIVE_INCIDENT_ERRORS,
+  errors
+});
+
 //thunk-action
 
 export const requestIncidents = () => dispatch => {
-  APIUtil.fetchAllIncidents().then( (incidents) => 
-    dispatch(receiveIncidents(incidents))
-  )
+  APIUtil.fetchAllIncidents().then( (res) => {
+    dispatch(receiveIncidents(res.data.incidents));
+  })
 };
 
 export const requestIncident = (incident_id) => dispatch => {
@@ -27,3 +34,18 @@ export const requestIncident = (incident_id) => dispatch => {
     dispatch(receiveIncident(incident))
   );
 };
+
+export const createIncident = formData => dispatch => {
+  APIUtil.createIncident(formData).then(res => {
+    dispatch(receiveIncident(res.data));
+    dispatch(closeModal());
+    })
+    .catch( err => dispatch(receiveIncidentErrors(err.response.data)))
+};
+
+export const updateIncident = (incident_id,formData) => dispatch => {
+  APIUtil.updateIncident(incident_id, formData).then(incident =>
+    dispatch(receiveIncident(incident))
+  );
+};
+
