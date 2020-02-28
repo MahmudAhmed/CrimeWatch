@@ -1,12 +1,9 @@
 import React from "react";
-import ReportFormContainer from "../report/report_form_container";
-import LoginFormContainer from "../session/login_form_container";
 import Modal from "../modal/modal";
-
 import './main_page.css'
-// import NavBar from '../nav/navbar';
 import IncidentIndexItem from "../incident/incident_index_item";
 import CrimeMap from "../map/map";
+
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -59,26 +56,18 @@ class MainPage extends React.Component {
   
 
   render() {
-    // debugger
     const reports = Object.values(this.props.incidents).length > 0 ? (this.props.incidents.map( incident => 
         <IncidentIndexItem key={incident._id} incident={incident}/>)) : [];
     return (
       <div className="main-div">
         <div className="main-div-2" >
-          {/* <h1 className="main-h1">Welcome To CrimeWatch</h1> */}
           <div className="main-map">
-            {/* Map will go here!
-            <img
-              src="https://media1.giphy.com/media/dOrYKxiH8cQXC/giphy.webp?cid=790b761194726438a76dda80107593e498dcca4345973bf2&rid=giphy.webp"
-              alt=""
-            ></img> */}
             <CrimeMap />
             {this.getLinks()}
           </div>
           <div className="main-report-list">
             <div><h2>All Incidents Near You:</h2></div>
             <ul className='div-ul'>
-              {/* <li>Reports will go here!</li> */}
               {reports}
             </ul>
           </div>

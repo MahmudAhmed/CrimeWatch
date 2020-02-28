@@ -1,8 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "../modal/modal.css";
-import { Link } from 'react-router-dom'
-import Modal from "../modal/modal";
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -18,16 +17,6 @@ class LoginForm extends React.Component {
     this.handleOtherForm = this.handleOtherForm.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.currentUser === true) {
-  //     this.props.history.push("/tweets");
-  //   }
-
-  //   // Set or clear errors
-  //   this.setState({ errors: nextProps.errors });
-  // }
-
-  // Handle field updates (called in the render method)
   update(field) {
     return e =>
       this.setState({
@@ -50,12 +39,10 @@ class LoginForm extends React.Component {
 
   handleOtherForm(e) {
     e.preventDefault();
-    e.stopPropagation();
     this.props.otherForm()
   }
 
   render() {
-    // debugger
     return (
       <div className="login-outer-container">
         <div className="login-form-container-1">

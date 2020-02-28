@@ -1,7 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Modal from "../modal/modal";
-import { Link } from 'react-router-dom'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -16,12 +14,6 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOtherForm = this.handleOtherForm.bind(this);
-  }
-
-  handleOtherForm(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    this.props.otherForm();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,12 +40,15 @@ class SignupForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
-    // debugger
     this.props.signup(user);
   }
 
+  handleOtherForm(e) {
+    e.preventDefault();
+    this.props.otherForm();
+  }
+
   render() {
-    // debugger
     return (
       <div className="signup-outer-container">
         <div className="signup-form-container-1">
@@ -67,28 +62,27 @@ class SignupForm extends React.Component {
               <h2 className="title">Welcome to CrimeWatch!</h2>
             </div>
             <div className="login-wrapper">
-                {this.renderErrors()}
-                <div className="login-email">
-                  <h5>NAME:</h5>
-                  <input
-                    type="text"
-                    value={this.state.name}
-                    onChange={this.update("name")}
-                    placeholder="Name*"
-                    className="login-emailpw-input"
-                    />
-                </div>
-                </div>
-                <div>
-                <div className="login-email">
-                    <h5>EMAIL:</h5>
-                    <input
-                      type="text"
-                      value={this.state.email}
-                      onChange={this.update("email")}
-                      placeholder="Email*"
-                      className="login-emailpw-input"
-                    />
+              <div className="login-email">
+                <h5>NAME:</h5>
+                <input
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.update("name")}
+                  placeholder="Name*"
+                  className="login-emailpw-input"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="login-email">
+                <h5>EMAIL:</h5>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email*"
+                  className="login-emailpw-input"
+                />
               </div>
               <br />
               <div className="login-password">
@@ -112,7 +106,6 @@ class SignupForm extends React.Component {
                   className="login-emailpw-input"
                 />
                 <br />
-                {/* <input type="submit" value="Submit" /> */}
                 <div className="signup-button">
                   <button
                     className="session-submit"
@@ -126,9 +119,9 @@ class SignupForm extends React.Component {
               <div className="signup-nav-content">
                 {/* {signupForm} */}
                 <p className="signup-login-link">
-                  <Link to="/login" className="signup-login-link">
+                  <button onClick={this.handleOtherForm} className="other-form">
                     Already have an account?
-                  </Link>
+                  </button>
                 </p>
               </div>
             </div>
@@ -141,7 +134,6 @@ class SignupForm extends React.Component {
           </div>
         </div>
       </div>
-      // </div>
     );
   }
 }

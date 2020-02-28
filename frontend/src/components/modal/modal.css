@@ -214,7 +214,7 @@
   z-index: 2000;
   border-radius: 25px;
   width: 40%;
-  height: 90%;
+  /* height: 90%; */
   background-color: white;
   border:3px solid rgb(0, 75, 75);
 }
