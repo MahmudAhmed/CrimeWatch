@@ -3,7 +3,7 @@ const validText = require("./valid-text");
 
 module.exports = function validateIncidentForm(data) {
   let errors = {};
-  let categories = ["Theft", "Homicide", "Street-Fight", "Robbery", "Assault" ];
+  let categories = ["Theft", "Homicide", "Street-Fight", "Robbery", "Assault", "Misc." ];
   data.description = validText(data.description) ? data.description : "";
 
   if (!Validator.isFloat(data.lat)) {

@@ -3,6 +3,7 @@ import ReportFormContainer from "../report/report_form_container";
 import LoginFormContainer from "../session/login_form_container";
 import "./main_page.css";
 // import NavBar from '../nav/navbar';
+import IncidentIndexItem from "../incident/incident_index_item";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -16,6 +17,10 @@ class MainPage extends React.Component {
       showLogin: false,
       showReport: false
     };
+  }
+
+  componentDidMount(){
+    this.props.requestIncidents();
   }
 
   toggleLogin() {
@@ -67,7 +72,9 @@ class MainPage extends React.Component {
   }
 
   render() {
-    // debugger
+    debugger
+    const reports = Object.values(this.props.incidents).length > 0 ? (this.props.incidents.map( incident => 
+        <IncidentIndexItem key={incident._id} incident={incident}/>)) : [];
     return (
       <div className="main-div">
         <div className="main-div-2">
@@ -82,7 +89,8 @@ class MainPage extends React.Component {
           </div>
           <div className="main-report-list">
             <ul>
-              <li>Reports will go here!</li>
+              {/* <li>Reports will go here!</li> */}
+              {reports}
             </ul>
           </div>
         </div>
