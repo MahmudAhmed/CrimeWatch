@@ -26,7 +26,7 @@ class ReportForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         debugger
-        const { closeFormModal, userId, createIncident } = this.props; 
+        const { closeFormModal, userId, createIncident, errors } = this.props; 
         const formData = {
           witness: userId,
           category: this.state.category,
@@ -34,9 +34,7 @@ class ReportForm extends React.Component {
           lat: this.state.lat.toString(),
           lng: this.state.lng.toString()
         };
-        createIncident(formData)
-        closeFormModal()
-  
+      createIncident(formData).then(() => closeFormModal())
     }
 
     handleChange(field){
@@ -50,6 +48,7 @@ class ReportForm extends React.Component {
           <div className="report-outer-container">
             <div className="report-form-container-1">
               <form onSubmit={this.handleSubmit} className="login-form">
+                {this.props.errors}
                 <div className="report-message">
                   <h2 className="title">Write a Report:</h2>
                 </div>

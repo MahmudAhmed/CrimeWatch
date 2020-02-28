@@ -8,7 +8,9 @@ export default function(state = [], action) {
     case RECEIVE_INCIDENT:
       return [];
     case RECEIVE_INCIDENT_ERRORS:
-      return action.errors;
+      // const errors = [];
+      
+      return Object.values(action.errors);
     default:
       return state;
   }

@@ -4,7 +4,8 @@ import { createIncident } from "../../actions/incident_action";
 
 const mapStateToProps = state => {
     return {
-      userId: state.session.user.id
+      userId: state.session.user.id,
+      errors: state.errors.incident
     };
 };
 
