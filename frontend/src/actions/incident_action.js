@@ -4,7 +4,7 @@ import { closeModal } from "./modal_actions";
 export const RECEIVE_INCIDENT = "RECEIVE_INCIDENT";
 export const RECEIVE_INCIDENTS = "RECEIVE_INCIDENTS";
 export const RECEIVE_INCIDENT_ERRORS = "RECEIVE_INCIDENT_ERRORS";
-
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 const receiveIncident = incident => ({
   type: RECEIVE_INCIDENT,
@@ -21,6 +21,9 @@ const receiveIncidentErrors = errors => ({
   errors
 });
 
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 //thunk-action
 
 export const requestIncidents = () => dispatch => {

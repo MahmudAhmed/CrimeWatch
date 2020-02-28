@@ -15,7 +15,6 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
     this.handleOtherForm = this.handleOtherForm.bind(this);
   }
 
@@ -51,17 +50,6 @@ class SignupForm extends React.Component {
     };
     // debugger
     this.props.signup(user);
-    this.props.closeModal();
-  }
-
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
-        ))}
-      </ul>
-    );
   }
 
   render() {
@@ -70,12 +58,16 @@ class SignupForm extends React.Component {
       <div className="login-outer-container">
         <div className="login-form-container-1">
           <form onSubmit={this.handleSubmit} className="login-form">
-          <div className="login-message">
-            <h2 className="title">Welcome to CrimeWatch!</h2>
-          </div>
+            {this.props.errors.map((err, idx) => (
+              <div key={idx} className="errors">
+                {err}
+              </div>
+            ))}
+            <div className="login-message">
+              <h2 className="title">Welcome to CrimeWatch!</h2>
+            </div>
             <div className="login-wrapper">
               <div className="login-email">
-                {this.renderErrors()}
                 <h5>EMAIL:</h5>
                 <input
                   type="text"
@@ -106,29 +98,37 @@ class SignupForm extends React.Component {
                   placeholder="Confirm Password*"
                   className="login-emailpw-input"
                 />
-              <br />
-              {/* <input type="submit" value="Submit" /> */}
+                <br />
+                {/* <input type="submit" value="Submit" /> */}
                 <div className="signup-button">
                   <button
                     className="session-submit"
                     type="submit"
-                    value="Submit">
+                    value="Submit"
+                  >
                     <div className="content-text-signup">Sign Up</div>
                   </button>
                 </div>
-              {this.renderErrors()}
-            </div>
+              </div>
               <div className="signup-nav-content">
                 {/* {signupForm} */}
-                <p className='signup-login-link'><Link to="/login" className='signup-login-link'>Already have an account?</Link></p>
+                <p className="signup-login-link">
+                  <Link to="/login" className="signup-login-link">
+                    Already have an account?
+                  </Link>
+                </p>
               </div>
             </div>
           </form>
-          <div onClick={() => this.props.closeModal()} className="modal-overlay">X</div>
+          <div
+            onClick={() => this.props.closeModal()}
+            className="modal-overlay"
+          >
+            X
+          </div>
         </div>
-        </div>
-        // </div>
-      
+      </div>
+      // </div>
     );
   }
 }

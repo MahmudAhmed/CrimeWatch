@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ReportForm from "./report_form";
-import { createIncident } from "../../actions/incident_action";
+import { createIncident, clearErrors } from "../../actions/incident_action";
 import {closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = state => {
@@ -14,7 +14,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
       createIncident: formData => dispatch(createIncident(formData)),
-      closeModal: () => dispatch(closeModal())
+      closeModal: () => {
+        dispatch(closeModal());
+        dispatch(clearErrors());
+      }
     };
 };
 

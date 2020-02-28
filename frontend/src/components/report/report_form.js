@@ -50,7 +50,11 @@ class ReportForm extends React.Component {
           <div className="report-outer-container">
             <div className="report-form-container-1">
               <form onSubmit={this.handleSubmit} className="login-form">
-                {this.props.errors}
+                {this.props.errors.map((err, idx) => (
+                  <div key={idx} className="">
+                    {err}
+                  </div>
+                ))}
                 <div className="report-message">
                   <h2 className="title">Write a Report:</h2>
                 </div>
@@ -78,7 +82,7 @@ class ReportForm extends React.Component {
                     Latitude:
                     <input
                       type="text"
-                    //   placeholder="ie: 40.712776"
+                      //   placeholder="ie: 40.712776"
                       value={this.state.lat}
                       className="report-location"
                       disabled

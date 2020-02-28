@@ -15,7 +15,6 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
     this.handleOtherForm = this.handleOtherForm.bind(this);
   }
 
@@ -47,7 +46,6 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user);
-    this.props.closeModal();
   }
 
   handleOtherForm(e) {
@@ -55,68 +53,69 @@ class LoginForm extends React.Component {
     e.stopPropagation();
     this.props.otherForm()
   }
-  // Render the session errors if there are any
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
-        ))}
-      </ul>
-    );
-  }
 
   render() {
     // debugger
     return (
       <div className="login-outer-container">
         <div className="login-form-container-1">
-          <div onClick={() => this.props.closeModal()} className="modal-overlay">X</div>
           <form onSubmit={this.handleSubmit} className="login-form">
+            {this.props.errors.map((err, idx) => (
+              <div key={idx} className="errors">
+                {err}
+              </div>
+            ))}
             <div className="login-message">
               <h2 className="title">Welcome Back!</h2>
               <h3 className="sub-title">We're so excited to see you again!</h3>
             </div>
             <div className="login-wrapper">
               <div className="login-email">
-                {this.renderErrors()}
                 <h5>EMAIL:</h5>
-                  <input
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.update("email")}
-                    placeholder="Email*"
-                    className="login-emailpw-input"
-                  />
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email*"
+                  className="login-emailpw-input"
+                />
               </div>
               <br />
               <div className="login-password">
                 <h5>PASSWORD:</h5>
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Password*"
-                    className="login-emailpw-input"
-                  />
-              <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password*"
+                  className="login-emailpw-input"
+                />
+                <br />
                 <div className="login-button">
                   <button
                     className="session-submit"
                     type="submit"
-                    value="Submit">
+                    value="Submit"
+                  >
                     <div className="content-text">Log In</div>
                   </button>
                 </div>
                 {/* <input type="submit" value="Submit" /> */}
                 <div className="loginNavContent">
-                  <button onClick={this.handleOtherForm} className="other-form">Need an Account?</button>
-                </div> 
+                  <button onClick={this.handleOtherForm} className="other-form">
+                    Need an Account?
+                  </button>
+                </div>
               </div>
             </div>
           </form>
-          <br/>
-          <div onClick={() => this.props.closeModal()} className="modal-overlay">X</div>
+          <br />
+          <div
+            onClick={() => this.props.closeModal()}
+            className="modal-overlay"
+          >
+            X
+          </div>
         </div>
       </div>
     );
