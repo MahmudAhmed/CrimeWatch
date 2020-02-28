@@ -1,11 +1,12 @@
 .incident-container {
     display: flex;
-    flex-direction: column;
-    border: 1px solid black;
+    /* flex-direction: column; */
+    border: 2px solid white;
     justify-content: space-between;
     text-align: center;
     border-radius: 5px;
     margin-bottom: 15px;
+    padding: 15px;
     /* overflow: break-word; */
 }
 
@@ -25,11 +26,11 @@
 .longitude {
     margin-left: 20px;
 }
-
+/* 
 .cat-time {
     display: flex;
     flex-direction: row;
-}
+} */
 
 .category {
     margin-left: 20px;

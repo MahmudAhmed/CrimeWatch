@@ -25,7 +25,7 @@
     flex-direction: column;
     display: flex;
     width: 90%;
-    height: 600px;
+    height: 100vh;
     overflow-y: scroll;
     background-color: rgb(0, 75, 75);
     align-items: center;
@@ -70,4 +70,5 @@
 
 .div-ul {
     margin: auto;
+    width: 90%;
 }
