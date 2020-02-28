@@ -2,6 +2,12 @@ const express = require("express");
 const router = express.Router();
 const Incident = require("../../models/Incident");
 const validateIncidentForm = require("../../validation/incidents");
+const incidents =require('../../data/incidents/incidents');
+
+router.get('/seed', (req,res) => {
+  Incident.insertMany(incidents);
+  res.send('seeded') 
+})
 
 router.get("/test", (req, res) => {
   res.json({ msg: "this is incidents route" });

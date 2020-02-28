@@ -31,10 +31,7 @@
     align-items: center;
     text-align: left;
     color: white;
-    margin: auto;
-    /* overflow: break-word; */
-    /* height: 100%; */
-    /* overflow-y: scroll; */
+    word-wrap: break-word;
 }
 
 .main-button {

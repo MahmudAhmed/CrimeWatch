@@ -24,6 +24,20 @@ const IncidentIndex = props  => {
             category: "Burglary",
             time: "11:00am",
             description: "Someone was spotted near central Bronx breaking into a family home after the residents have left. Suspect was wearing all black with a ski mask on."
+        },
+        {
+            lat: 42.257987,
+            lng: -74.2823627,
+            category: "Homicide",
+            time: "7:45am",
+            description: "A drive-by shooting was spotted on Cross Island Parkway near the Burger King. Suspect was driving a 1988 grey corvette."
+        },
+        {
+            lat: 41.1170529,
+            lng: -73.1208671,
+            category: "Assault",
+            time: "1:00am",
+            description: "Someone was spotted near Cherry Lane assaulting a young man. Suspect is wearing all black with a red baseball cap."
         }
     ];
 
