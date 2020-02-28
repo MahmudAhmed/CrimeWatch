@@ -8,6 +8,11 @@
     border-bottom: 3px solid black;
 }
 
+ #map-container{
+   width: 500px;
+   height: 500px;
+ }
+
 .main-map {
     display: flex;
     width: 55%;

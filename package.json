@@ -30,6 +30,8 @@
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
     "express": "^4.17.1",
+    "google-map-react": "^1.1.6",
+    "google-maps-react": "^2.0.2",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mongo-seeding-cli": "^3.4.0",
@@ -45,6 +47,8 @@
     "validator": "^12.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "customize-cra": "^0.9.1",
+    "nodemon": "^2.0.2",
+    "react-app-rewired": "^2.1.5"
   }
 }
