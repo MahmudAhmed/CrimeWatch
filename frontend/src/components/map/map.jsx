@@ -3,23 +3,23 @@ import GoogleMapReact from 'google-map-react';
 import keys from "../../config/keys";
 
 class CrimeMap extends Component {
-  
+
+  renderMarkers (map, maps){
+    let marker = new maps.Marker({
+      position: { lat: 40.6924415, lng: -73.9892479 },
+      map,
+      title: 'Hello World!'
+    });
+    return marker;
+  }
   render() {
-    const renderMarkers = (map, maps) => {
-      let marker = new maps.Marker({
-        position: { lat: 40.6924415, lng: -73.9892479 },
-        map,
-        title: 'Hello World!'
-      });
-      return marker;
-    };
     return (
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: keys.maps }}
           defaultCenter={{ lat: 40.6924415, lng: -73.9892479 }}
           defaultZoom={13}
-          onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
+          onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
         >
         </GoogleMapReact>
       </div>
