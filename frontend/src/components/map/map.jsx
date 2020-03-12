@@ -27,8 +27,4 @@ class CrimeMap extends Component {
   }
 }
 
-const Marker = props => {
-  return <div className="SuperAwesomePin"></div>
-}
-
 export default CrimeMap;
