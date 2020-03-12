@@ -13,6 +13,7 @@ class CrimeMap extends Component {
     return marker;
   }
   render() {
+    console.log(keys.maps);
     return (
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
