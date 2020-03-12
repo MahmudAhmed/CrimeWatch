@@ -1,3 +1,3 @@
 module.exports = {
-  maps: process.env.GOOGLE_API_KEY
+  maps: process.env.REACT_APP_GOOGLE_API_KEY
 };
