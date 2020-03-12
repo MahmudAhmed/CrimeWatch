@@ -1,3 +1,3 @@
 module.exports = {
-  maps: process.env.maps,
+  maps: process.env.GOOGLE_API_KEY
 };
