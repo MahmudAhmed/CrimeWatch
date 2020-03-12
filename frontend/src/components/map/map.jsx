@@ -14,6 +14,7 @@ class CrimeMap extends Component {
   }
   render() {
     console.log(keys.maps);
+    console.log(process.env.NODE_ENV);
     return (
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
