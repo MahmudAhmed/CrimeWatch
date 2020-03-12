@@ -62,7 +62,7 @@ class MainPage extends React.Component {
       <div className="main-div">
         <div className="main-div-2" >
           <div className="main-map">
-            <CrimeMap />
+            <CrimeMap incidents={this.props.incidents}/>
             {this.getLinks()}
           </div>
           <div className="main-report-list">
