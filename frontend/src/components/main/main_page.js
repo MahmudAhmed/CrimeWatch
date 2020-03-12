@@ -56,7 +56,7 @@ class MainPage extends React.Component {
   
 
   render() {
-    const reports = Object.values(this.props.incidents).length > 0 ? (this.props.incidents.map( incident => 
+    const reports = Object.values(this.props.incidents).length > 0 ? (this.props.incidents.reverse().map( incident => 
         <IncidentIndexItem key={incident._id} incident={incident}/>)) : [];
     return (
       <div className="main-div">

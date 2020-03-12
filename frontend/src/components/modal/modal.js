@@ -6,7 +6,6 @@ import SignupFormContainer from '../session/signup_form_container';
 import ReportFormContainer from '../report/report_form_container';
 
 function Modal(props) {
-    // debugger
     if (!props) {
         return null;
     }
@@ -24,14 +23,12 @@ function Modal(props) {
         default:
             return null;
     }
-    // debugger
     return (
         component
     );
 }
 
 const mapStateToProps = state => {
-    // debugger
     return {
         modal: state.modal
     };

@@ -13,7 +13,6 @@ module.exports = passport => {
     new JwtStrategy(options, (jwt_payload, done) => {
       User.findById(jwt_payload.id)
         .then(user => {
-          // debugger
           if (user) {
             // return the user to the frontend
             return done(null, user);

@@ -26,7 +26,6 @@ router.get(
 
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-  // debugger;
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -74,7 +73,6 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  // debugger;
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
