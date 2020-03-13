@@ -39,7 +39,7 @@ class MainPage extends React.Component {
 
       return (
         <>
-          <button onClick={() => this.props.openModal('report')} className='main-button'>Make a New Report will go here!</button>
+          <button onClick={() => this.props.openModal('report')} className='main-button'>Make a New Report!</button>
           <Modal />
         </>
       );
@@ -47,7 +47,7 @@ class MainPage extends React.Component {
 
       return (
         <>
-          <button onClick={() => this.props.openModal('login')} className='main-button'>Make a New Report will go here!</button>
+          <button onClick={() => this.props.openModal('login')} className='main-button'>Make a New Report!</button>
           <Modal />
         </>
       );
