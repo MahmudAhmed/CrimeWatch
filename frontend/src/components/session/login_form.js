@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
   // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
-    e.stopPropagation();
+    // e.stopPropagation();
 
     let user = {
       email: this.state.email,
