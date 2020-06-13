@@ -17,11 +17,10 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+
     // if (nextProps.signedIn === true) {
     //   this.props.history.push("/login");
     // }
-
     this.setState({ errors: nextProps.errors });
   }
 
@@ -33,7 +32,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+
     e.preventDefault();
     let user = {
       name: this.state.name,
@@ -50,7 +49,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    debugger
+
     return (
       <div className="signup-outer-container">
         <div className="signup-form-container-1">
