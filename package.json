@@ -26,7 +26,7 @@
   "homepage": "https://github.com/MahmudAhmed/ChuckFacts#readme",
   "dependencies": {
     "@mongoosejs/double": "^0.2.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.1.0",
