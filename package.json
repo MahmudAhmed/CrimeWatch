@@ -45,7 +45,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "validator": "^12.2.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "customize-cra": "^0.9.1",
